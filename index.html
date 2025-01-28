@@ -16,10 +16,11 @@
       <a-marker preset="hiro">
         <a-sphere
           src="#earthImage"
-          radius="1.5"
+          radius="0.5"
           position="0 1 0"
-          scale="1 1 1"
-          animation="property: scale; to: 2 2 2; dur: 1000; loop: true; dir: alternate"
+          scale="0.001 0.001 0.001"
+          animation="property: rotation; to: 0 360 0; dur: 2000; easing: linear; loop: true"
+          animation__scale="property: scale; to: 1 1 1; dur: 1000; easing: easeInOutQuad; loop: false"
         ></a-sphere>
       </a-marker>
 
