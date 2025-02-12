@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Web AR Kelompok Nahrul</title>
+    <title>Web AR Kelompok </title>
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   </head>
-  <body style="margin: 0px; overflow: hidden">
+  <body style="margin: 0px; overflow: hidden;">
+
+    <!-- Scene AR -->
     <a-scene embedded arjs>
       <!-- Asset declaration -->
       <a-assets>
-        <img id="earthImage" src="/earth.png" crossorigin="anonymous" />
+        <img id="earthImage" src="earth.png" crossorigin="anonymous" />
       </a-assets>
 
-      <!-- Marker and 3D object -->
+      <!-- Marker untuk AR -->
       <a-marker preset="hiro">
+        <!-- Model Bumi dalam bentuk bola (sphere) -->
         <a-sphere
           src="#earthImage"
           radius="0.5"
           position="0 1 0"
-          scale="0.001 0.001 0.001"
-          animation="property: rotation; to: 0 360 0; dur: 2000; easing: linear; loop: true"
-          animation__scale="property: scale; to: 1 1 1; dur: 1000; easing: easeInOutQuad; loop: false"
+          animation="property: rotation; to: 0 360 0; dur: 5000; easing: linear; loop: true"
         ></a-sphere>
+
+        <!-- Informasi tentang Bumi (ditampilkan di atas bola Bumi) -->
+        <a-text
+          value="Bumi\nDiameter: 12,742 km\nJarak Matahari: 149,6 juta km\nAtmosfer: 78% Nitrogen, 21% Oksigen"
+          position="0 1.7 0"  <!-- Mengatur teks berada di atas bola Bumi -->
+          align="center"
+          color="yellow"
+          width="2"
+          scale="0.5 0.5 0.5">
+        </a-text>
       </a-marker>
 
       <a-entity camera></a-entity>
